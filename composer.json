@@ -1,17 +1,17 @@
 {
-    "name": "moguyun-plugins/home-navbar",
-    "description": "moguyun home navbar",
+    "name": "moguyun-plugins/scripts",
+    "description": "moguyun scripts",
     "type": "moguyun-plugin",
     "version": "0.0.1",
     "keywords": [
         "moguyun",
         "cms",
-        "moguyun-plugin",
-        "home-navbar"
+        "scripts-plugin",
+        "scripts"
     ],
     "support": {
-        "docs": "https://gitlab.com/moguyun/plugins/home-navbar/blob/master/README.md",
-        "issues": "https://gitlab.com/moguyun/plugins/home-navbar/issues"
+        "docs": "https://gitlab.com/moguyun/plugins/scripts/blob/master/README.md",
+        "issues": "https://gitlab.com/moguyun/plugins/scripts/issues"
     },
     "license": "MIT",
     "authors": [
@@ -28,16 +28,16 @@
     ],
     "autoload": {
         "psr-4": {
-          "moguyun\\plugins\\homenavbar\\": "src/"
+          "moguyun\\plugins\\scripts\\": "src/"
         }
     },
     "extra": {
-        "name": "home-navbar",
-        "handle": "home-navbar",
+        "name": "scripts",
+        "handle": "scripts",
         "schemaVersion": "0.0.1",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/zacksleo/home-navbar/master/CHANGELOG.md",
-        "class": "moguyun\\plugins\\homenavbar\\HomeNavbar"
+        "changelogUrl": "https://raw.githubusercontent.com/zacksleo/scripts/master/CHANGELOG.md",
+        "class": "moguyun\\plugins\\scripts\\Scripts"
     }
 }
