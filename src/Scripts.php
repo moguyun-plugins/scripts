@@ -10,15 +10,14 @@ use moguyun\plugins\scripts\models\Script;
 class Scripts extends Plugin
 {
     public function init()
-    {                    #插件初始化,配置插件信息 必须
-        // set plugin's info
-        $this->identify = 'Scripts';            #必要参数, 插件的唯一标识.
-        $this->name = '自定义网站脚本';         #必要参数, 插件的显示名称.
-        $this->version = '0.0.1';                 #插件版本号
-        $this->description = '在首页添加自定义脚本';    #插件描述
-        $this->copyright = '蘑菇云'; #插件版权信息
-        $this->website = 'http://www.moguyun.ltd';      #网站
-        $this->icon = 'icon.svg'; #插件图标,最大72*72, 如果不设置将使用默认图标;
+    {
+        $this->identify = 'Scripts';
+        $this->name = '自定义网站脚本';
+        $this->version = '0.0.1';
+        $this->description = '在首页添加自定义脚本';
+        $this->copyright = '蘑菇云';
+        $this->website = 'http://www.moguyun.ltd';
+        $this->icon = 'icon.svg';
     }
 
     public function hooks()
@@ -34,7 +33,7 @@ class Scripts extends Plugin
         $position = $this->getSetting('position');
         $content = $this->getSetting('content');
         if ($position == 'indexBottom') {
-            return $scripts;
+            return $content;
         }
     }
 
@@ -58,10 +57,10 @@ class Scripts extends Plugin
             $this->setSetting('position', $model->position);
             $this->setSetting('content', $model->content);
             Yii::$app->session->setFlash('success', '设置成功');
-            return $this->redirect('admincp');
+            //return $this->refresh();
         }
         return $this->render('admincp', [
-            // 'models' => $models
+            'model' => $model
         ]);
     }
 

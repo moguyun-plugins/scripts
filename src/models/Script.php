@@ -16,12 +16,20 @@ class Script extends Model
     {
         return [
             [['position', 'content'], 'required'],
-            ['position', 'in', 'range' => self::POSITION_GLOBAL_FOOTER, self::POSITION_INDEX_BOTTOM],
+            ['position', 'in', 'range' => [self::POSITION_GLOBAL_FOOTER, self::POSITION_INDEX_BOTTOM]],
             ['content', 'string'],
         ];
     }
 
-    public function getPositionList()
+    public function attributeLabels()
+    {
+        return [
+            'position' => '显示位置',
+            'content' => '脚本内容',
+        ];
+    }
+
+    public static function getPositionList()
     {
         return [
             self::POSITION_INDEX_BOTTOM => '首页底部',
