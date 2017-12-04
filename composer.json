@@ -1,0 +1,43 @@
+{
+    "name": "moguyun-plugins/home-navbar",
+    "description": "moguyun home navbar",
+    "type": "moguyun-plugin",
+    "version": "0.0.1",
+    "keywords": [
+        "moguyun",
+        "cms",
+        "moguyun-plugin",
+        "home-navbar"
+    ],
+    "support": {
+        "docs": "https://gitlab.com/moguyun/plugins/home-navbar/blob/master/README.md",
+        "issues": "https://gitlab.com/moguyun/plugins/home-navbar/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zackseo",
+            "homepage": "zacksleo.github.io"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "moguyun\\plugins\\homenavbar\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "home-navbar",
+        "handle": "home-navbar",
+        "schemaVersion": "0.0.1",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/zacksleo/home-navbar/master/CHANGELOG.md",
+        "class": "moguyun\\plugins\\homenavbar\\HomeNavbar"
+    }
+}
