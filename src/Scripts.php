@@ -32,26 +32,34 @@ class Scripts extends Plugin
     public function indexBottom()
     {
         $position = $this->getSetting('position');
+        $content = $this->getSetting('content');
         if ($position == 'indexBottom') {
-            $this->render('default', array(
-                //'model' => $model,
-            ));
+            return $scripts;
         }
     }
 
     public function globalFooter()
     {
         $position = $this->getSetting('position');
+        $content = $this->getSetting('content');
         if ($position == 'globalFooter') {
-            $this->render('default', array(
-                //'model' => $model,
-            ));
+            return $content;
         }
     }
 
-
     public function admincp()
     {
+        $model = new Script();
+        $model->load([
+            'position' => $this->getSetting('position'),
+            'content' => $this->getSetting('content'),
+        ]);
+        if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
+            $this->setSetting('position', $model->position);
+            $this->setSetting('content', $model->content);
+            Yii::$app->session->setFlash('success', '设置成功');
+            return $this->redirect('admincp');
+        }
         return $this->render('admincp', [
             // 'models' => $models
         ]);
@@ -60,7 +68,7 @@ class Scripts extends Plugin
     public function install()
     {
         $this->setSetting('position', 'globalFooter');
-        $this->setSetting('scripts', '');
+        $this->setSetting('content', '');
         return true;
     }
 

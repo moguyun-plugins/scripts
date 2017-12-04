@@ -6,15 +6,18 @@ use yii\base\Model;
 
 class Script extends Model
 {
+    public $position;
+    public $content;
+
     const POSITION_INDEX_BOTTOM = 'indexBottom';
     const POSITION_GLOBAL_FOOTER = 'globalFooter';
 
     public function rules()
     {
         return [
-            [['position', 'scripts'], 'required'],
+            [['position', 'content'], 'required'],
             ['position', 'in', 'range' => self::POSITION_GLOBAL_FOOTER, self::POSITION_INDEX_BOTTOM],
-            ['scripts', 'string'],
+            ['content', 'string'],
         ];
     }
 
