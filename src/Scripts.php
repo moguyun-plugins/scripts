@@ -49,10 +49,10 @@ class Scripts extends Plugin
     public function admincp()
     {
         $model = new Script();
-        $model->load([
+        $model->attributes = [
             'position' => $this->getSetting('position'),
             'content' => $this->getSetting('content'),
-        ]);
+        ];
         if (Yii::$app->request->isPost && $model->load(Yii::$app->request->post())) {
             $this->setSetting('position', $model->position);
             $this->setSetting('content', $model->content);
